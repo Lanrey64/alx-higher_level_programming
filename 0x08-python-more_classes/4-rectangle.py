@@ -9,12 +9,13 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Method that initializes the instance
-
+        
         Args:
             width: rectangle width
             height: rectangle height
-
-            """
+            
+            
+        """
 
         self.width = width
         self.height = height
@@ -22,27 +23,28 @@ class Rectangle:
     @property
     def width(self):
         """ method that returns the value of the width
-
+        
         Returns:
             rectangle width
+            
+            
+        """
 
-            """
-
-            return self.__width
+        return self.__width
 
     @width.setter
     def width(self, value):
         """ method that defines the width
-
+        
         Args:
             value: width
-
-            Raises:
+            
+        Raises:
             TypeError: if width is not an integer
             ValueError: if width is less than zero
-
-
-            """
+            
+            
+        """
 
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -112,7 +114,7 @@ class Rectangle:
         
         Returns:
             str of the rectangle
-            
+                     
         """
 
         rectangle = ""
@@ -124,3 +126,13 @@ class Rectangle:
             rectangle += ("#" * self.width) + "\n"
 
         return rectangle[:-1]
+
+    def __repr__(self):
+        """ Method that returns the string represantion of the instance
+        
+        Returns:
+            string represenation of the object
+            
+        """
+
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
